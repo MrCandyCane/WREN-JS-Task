@@ -5,7 +5,6 @@ import { SheepField } from "./SheepField";
 import { BreedSheep } from "./BreedSheep";
 import { BrandSheep } from "./BrandSheep";
 import "./Styles/App.css";
-import 'bootstrap/dist/css/bootstrap.css';
 
 export const App = () =>
 {
