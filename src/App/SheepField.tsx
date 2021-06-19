@@ -12,13 +12,14 @@ export const SheepField = ({ Sheeps } : Props) =>
         const Output : any = [];
         Sheeps.map((Sheep, n) =>
         {
-            if (Sheep.isAged)
-            {
                 Output.push
                 (
-                    <div className="Sheep" key={n}>
+                    <div className={Sheep.isAged ?  "Sheep" :  "SheepChild"} key={n}>
                          <div>
-                            <img className="SheepAdultIMG" src={Sheep.isBranded ?  "https://i.imgur.com/LHCDlio.png" :  "https://i.imgur.com/Um0nkn4.png"} />
+                            <img 
+                                className={Sheep.isAged ?  "SheepAdultIMG" :  "SheepChildIMG"} 
+                                src={Sheep.isBranded ?  "https://i.imgur.com/LHCDlio.png" :  "https://i.imgur.com/Um0nkn4.png"} 
+                            />
                             <div className="SheepName">
                                 {Sheep.Name}
                             </div>
@@ -26,33 +27,7 @@ export const SheepField = ({ Sheeps } : Props) =>
                             </div>
                          </div>
                     </div>
-                )
-            }
-        });
-        return Output;
-    }
-
-    function DisplayBabySheep()
-    {
-        const Output : any = [];
-        Sheeps.map((Sheep, n) =>
-        {
-            if (!Sheep.isAged)
-            {
-                Output.push
-                (
-                    <div className="SheepChild" key={n}>
-                         <div>
-                            <img className="SheepChildIMG" src={Sheep.isBranded ?  "https://i.imgur.com/LHCDlio.png" :  "https://i.imgur.com/Um0nkn4.png"} />
-                            <div className="SheepName">
-                                {Sheep.Name}
-                            </div>
-                            <div className={Sheep.Gender}>                                
-                            </div>
-                         </div>
-                    </div>
-                )
-            }
+               )
         });
         return Output;
     }
@@ -61,7 +36,6 @@ export const SheepField = ({ Sheeps } : Props) =>
     return (
         <div className="SheepFieldInside">
             {DisplaySheep()}
-            {DisplayBabySheep()}
        </div>
     );
 }
