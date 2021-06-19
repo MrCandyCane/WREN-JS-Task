@@ -35,5 +35,10 @@ Logic that must be factored in:
 3) Branded sheep are not able to breed
 
 It's up to you how you represent the field, this can be anything from a HTML table to a fully rendered WebGL canvas. Use common sense to define your rules about which sheep can breed with each other, and include them when you return your submission.
-
 Good luck!
+
+### Aditional logic added
+
+1) Sheep can be Mature or not to determine if it can breed (does not affect being randomly selected for branding).
+2) If giving birth is success added chance for child to be born either as Male or Female.
+
